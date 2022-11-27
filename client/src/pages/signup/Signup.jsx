@@ -1,9 +1,22 @@
-import {Box, Heading, Input, Button} from "@chakra-ui/react";
+import {Box, Heading, Button} from "@chakra-ui/react";
+import {Input} from "components/index.js";
+import {useFormik} from "formik";
+import {signUpSchema} from "schemas";
 
 const Signup = () => {
-	const onSubmit = (e) => {
-		e.preventDefault();
-	};
+	const formik = useFormik({
+		initialValues: {
+			fname: "",
+			lname: "",
+			email: "",
+			password: "",
+			passwordConfirmation: "",
+		},
+		validationSchema: signUpSchema,
+		onSubmit: (values) => {
+			alert(JSON.stringify(values, null, 2));
+		},
+	});
 
 	return (
 		<Box
@@ -27,41 +40,44 @@ const Signup = () => {
 			</Box>
 
 			<Box>
-				<form onSubmit={onSubmit}>
+				<form onSubmit={formik.handleSubmit}>
 					<Input
-						placeholder="First Name"
-						bg={"black.100"}
-						size="md"
-						width="auto"
-						m={2}
+						name={"fname"}
+						label="First Name"
+						onChange={formik.handleChange}
+						value={formik.values.fname}
+						error={formik.errors.fname}
 					/>
 					<Input
-						m={2}
-						placeholder="Last Name"
-						bg={"black.100"}
-						width="auto"
-						size="md"
+						name={"lname"}
+						label="Last Name"
+						onChange={formik.handleChange}
+						value={formik.values.lname}
+						error={formik.errors.lname}
 					/>
 					<Input
-						m={2}
-						placeholder="Email"
-						bg={"black.100"}
-						width="auto"
-						size="md"
+						name={"email"}
+						label="Email Address"
+						type={"email"}
+						onChange={formik.handleChange}
+						value={formik.values.email}
+						error={formik.errors.email}
 					/>
 					<Input
-						m={2}
-						placeholder="Password"
-						bg={"black.100"}
-						width="auto"
-						size="md"
+						name={"password"}
+						type={"password"}
+						label="Password"
+						onChange={formik.handleChange}
+						value={formik.values.password}
+						error={formik.errors.password}
 					/>
 					<Input
-						m={2}
-						placeholder="Password again"
-						bg={"black.100"}
-						width="auto"
-						size="md"
+						name={"passwordConfirmation"}
+						type={"password"}
+						label="Password Again"
+						onChange={formik.handleChange}
+						value={formik.values.passwordConfirmation}
+						error={formik.errors.passwordConfirmation}
 					/>
 
 					<Box>

@@ -27,6 +27,7 @@
 	},
 	"devDependencies": {
 		"concurrently": "^7.1.0",
+		"jsdoc": "^4.0.0",
 		"wsrun": "^5.2.4"
 	}
 }
