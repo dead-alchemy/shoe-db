@@ -1,4 +1,4 @@
-import App from "./routes/app/App";
+import {App, Login, Signup} from "./components/index.js";
 
 import {createBrowserRouter} from "react-router-dom";
 
@@ -11,6 +11,14 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
+	},
+	{
+		path: "/login",
+		element: <Login />,
+	},
+	{
+		path: "/signup",
+		element: <Signup />,
 	},
 ]);
 

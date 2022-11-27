@@ -1,8 +1,7 @@
 import {Box, Heading, Button, Center} from "@chakra-ui/react";
-import image from "images/riyan-ong-j1PxAa2U-T4-unsplash.jpg";
 import image2 from "images/ryan-plomp-76w_eDO1u1E-unsplash.jpg";
 
-function App() {
+const App = () => {
 	return (
 		<Box
 			//bgGradient="linear(to-br, yellow.100 65%, red.100 99%)"
@@ -67,6 +66,6 @@ function App() {
 			</Center>
 		</Box>
 	);
-}
+};
 
 export default App;
