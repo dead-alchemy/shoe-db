@@ -1,12 +1,12 @@
 import {Box, Heading, Button, Center} from "@chakra-ui/react";
 import {Link as RRDLink} from "react-router-dom";
-import image2 from "images/ryan-plomp-76w_eDO1u1E-unsplash.jpg";
+import image from "images/ryan-plomp-76w_eDO1u1E-unsplash.jpg";
 
 const App = () => {
 	return (
 		<Box
 			//bgGradient="linear(to-br, yellow.100 65%, red.100 99%)"
-			backgroundImage={image2}
+			backgroundImage={image}
 			//height={"100vh"}
 			scrollBehavior="smooth"
 			p={4}

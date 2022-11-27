@@ -1,4 +1,4 @@
-import {App, Login, Signup} from "./components/index.js";
+import {App, Login, Signup} from "./pages/index.js";
 
 import {createBrowserRouter} from "react-router-dom";
 
@@ -6,7 +6,7 @@ import {createBrowserRouter} from "react-router-dom";
 //     path: "/",
 //     element: <Root />,
 //     errorElement: <ErrorPage />,
-//   },s
+//   },
 const router = createBrowserRouter([
 	{
 		path: "/",
