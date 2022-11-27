@@ -44,7 +44,7 @@ const App = () => {
 					<Heading
 						color={"yellow.600"}
 						textAlign={"center"}
-						mt={"10rem"}
+						mt={"8rem"}
 						as={"h2"}
 						size="2xl"
 						textShadow="1px 2px #E5446D"
@@ -61,7 +61,7 @@ const App = () => {
 						color={"yellow.500"}
 						textShadow="1px 1px #E5446D"
 						textAlign={"center"}
-						mt={"15rem"}
+						mt={"10rem"}
 						as={RRDLink}
 						to={"signup"}
 					>

@@ -1,5 +1,6 @@
 import {Box, Heading, Button} from "@chakra-ui/react";
 import {Input} from "components/index.js";
+import image from "images/riyan-ong-j1PxAa2U-T4-unsplash.jpg";
 import {useFormik} from "formik";
 import {signUpSchema} from "schemas";
 
@@ -22,6 +23,10 @@ const Signup = () => {
 		<Box
 			height={"100vh"}
 			bgGradient="linear(red.100 0%, yellow.100 85%)"
+			backgroundImage={image}
+			backgroundRepeat={"no-repeat"}
+			backgroundPosition={"center"}
+			backgroundSize={"cover"}
 			p={2}
 		>
 			<Box>
