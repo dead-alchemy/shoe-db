@@ -1,4 +1,5 @@
 import {Box, Heading, Button, Center} from "@chakra-ui/react";
+import {Link as RRDLink} from "react-router-dom";
 import image2 from "images/ryan-plomp-76w_eDO1u1E-unsplash.jpg";
 
 const App = () => {
@@ -19,6 +20,8 @@ const App = () => {
 				color={"yellow.500"}
 				textShadow="1px 1px #E5446D"
 				textAlign={"right"}
+				as={RRDLink}
+				to={"login"}
 			>
 				Login
 			</Button>
@@ -59,6 +62,8 @@ const App = () => {
 						textShadow="1px 1px #E5446D"
 						textAlign={"center"}
 						mt={"15rem"}
+						as={RRDLink}
+						to={"signup"}
 					>
 						Sign Up
 					</Button>
