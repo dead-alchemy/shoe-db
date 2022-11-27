@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./routes/App";
+import router from "./routes";
+import theme from "./theme/theme";
 import {ChakraProvider} from "@chakra-ui/react";
+import {RouterProvider} from "react-router-dom";
 
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 
@@ -15,8 +16,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
 	//<React.StrictMode>
 	<QueryClientProvider client={queryClient}>
-		<ChakraProvider>
-			<App />
+		<ChakraProvider theme={theme}>
+			<RouterProvider router={router} />
 		</ChakraProvider>
 		<ReactQueryDevtools initialIsOpen={false} />
 	</QueryClientProvider>
