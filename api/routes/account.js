@@ -10,6 +10,7 @@ module.exports = router.post("/creation/", async (req, res) => {
 	console.log(body);
 
 	const {status, data} = await getTest();
+	console.log(status);
 
 	if (status === 200) {
 		res.send({data: data, rows: data.length});

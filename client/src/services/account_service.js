@@ -9,11 +9,8 @@ export const create_acount = async ({
 }) => {
 	if (password !== passwordConfirmation) return "Passwords don't match";
 
-	console.log(fname, lname, email, password);
-
 	let headersList = {
 		Accept: "*/*",
-		"User-Agent": "Thunder Client (https://www.thunderclient.com)",
 		"Content-Type": "application/json",
 	};
 
@@ -24,13 +21,13 @@ export const create_acount = async ({
 		password,
 	});
 
-	let response = await fetch("http://localhost:8080/api/account/creation", {
+	let response = await fetch("http://localhost:8080/api/account/creation/", {
 		method: "POST",
 		body: bodyContent,
 		headers: headersList,
 	});
 
-	let data = await response.text();
+	let data = await response;
 	console.log(data);
 	return data;
 };

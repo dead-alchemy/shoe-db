@@ -16,8 +16,8 @@ const Signup = () => {
 			passwordConfirmation: "",
 		},
 		validationSchema: signUpSchema,
-		onSubmit: (values) => {
-			const response = create_acount(values);
+		onSubmit: async (values) => {
+			const response = await create_acount(values);
 			console.log(response);
 		},
 	});
