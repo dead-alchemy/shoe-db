@@ -4,6 +4,8 @@ import image from "images/riyan-ong-j1PxAa2U-T4-unsplash.jpg";
 import {useFormik} from "formik";
 import {signUpSchema} from "schemas";
 
+import {create_acount} from "services/account_service";
+
 const Signup = () => {
 	const formik = useFormik({
 		initialValues: {
@@ -15,7 +17,8 @@ const Signup = () => {
 		},
 		validationSchema: signUpSchema,
 		onSubmit: (values) => {
-			alert(JSON.stringify(values, null, 2));
+			const response = create_acount(values);
+			console.log(response);
 		},
 	});
 
