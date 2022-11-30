@@ -9,6 +9,7 @@ const port = process.env["API_PORT"] || 8080;
 // public routes
 app.use("/api/", require("./routes/example.js"));
 app.use("/api/pg", require("./routes/postgress.js"));
+app.use("/api/account/", require("./routes/account.js"));
 
 app.use((error, req, res, next) => {
 	if (res.headerSent) {

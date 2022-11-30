@@ -1,6 +1,6 @@
 import {base_url} from "./url_service";
 
-export const create_acount = ({
+export const create_acount = async ({
 	fname,
 	lname,
 	email,
@@ -9,13 +9,28 @@ export const create_acount = ({
 }) => {
 	if (password !== passwordConfirmation) return "Passwords don't match";
 
-	const res = fetch(`${base_url()}/account/creation/`, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-			// 'Content-Type': 'application/x-www-form-urlencoded',
-		},
-		body: JSON.stringify(fname, lname, email, password),
+	console.log(fname, lname, email, password);
+
+	let headersList = {
+		Accept: "*/*",
+		"User-Agent": "Thunder Client (https://www.thunderclient.com)",
+		"Content-Type": "application/json",
+	};
+
+	let bodyContent = JSON.stringify({
+		fname,
+		lname,
+		email,
+		password,
 	});
-	return res.json();
+
+	let response = await fetch("http://localhost:8080/api/account/creation", {
+		method: "POST",
+		body: bodyContent,
+		headers: headersList,
+	});
+
+	let data = await response.text();
+	console.log(data);
+	return data;
 };
